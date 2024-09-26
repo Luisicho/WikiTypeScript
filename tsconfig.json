@@ -110,6 +110,9 @@
   "exclude": [
     "node_modules"
   ],
+  // "files": [
+  //   "app.ts"
+  // ]
   // "include": [
   //   "app.ts"
   // ]
