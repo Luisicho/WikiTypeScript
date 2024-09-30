@@ -2,6 +2,14 @@ class Department {
   // name: string;
   protected employees: string [] = [];
 
+  get Employees(){
+    return this.employees;
+  }
+
+  set Employees(E:string[]){
+    this.Employees = E;
+  }
+
   constructor(private readonly id: string,public name: string){}
   describe(){
     console.log('Departamento: '+ this.name)
