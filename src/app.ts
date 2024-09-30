@@ -1,10 +1,8 @@
 class Department {
-  name: string;
+  // name: string;
   private employees: string [] = [];
 
-  constructor(n: string){
-    this.name = n;
-  }
+  constructor(public name: string){}
   describe(){
     console.log('Departamento: '+ this.name)
   }
