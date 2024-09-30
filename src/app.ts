@@ -1,9 +1,28 @@
-function add(n1: number, n2: number) {
-  return n1 + n2;
+class Department {
+  name: string;
+  private employees: string [] = [];
+
+  constructor(n: string){
+    this.name = n;
+  }
+  describe(){
+    console.log('Departamento: '+ this.name)
+  }
+  addEmployee(employe: string){
+    this.employees.push(employe);
+  }
+  printEmployeeInformation(){
+    console.log(this.employees.length);
+    console.log(this.employees);
+  }
 }
 
-const num1 = 5;
-const num2 = 1.2;
+const contaduria = new Department("Contaduria");
 
-const result = add(num1, num2);
-console.log(result);
+contaduria.addEmployee("Luis");
+contaduria.addEmployee("Miguel");
+
+contaduria.describe();
+contaduria.printEmployeeInformation();
+
+
