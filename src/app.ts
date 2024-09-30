@@ -1,6 +1,6 @@
 class Department {
   // name: string;
-  private employees: string [] = [];
+  protected employees: string [] = [];
 
   constructor(private readonly id: string,public name: string){}
   describe(){
@@ -12,6 +12,13 @@ class Department {
   printEmployeeInformation(){
     console.log(this.employees.length);
     console.log(this.employees);
+  }
+}
+
+class ITDepartment extends Department{
+  constructor(id: string, private admins: string[]){
+    super(id,"IT") //Constructor de Padre
+    console.log(this.employees)
   }
 }
 
