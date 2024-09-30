@@ -2,7 +2,7 @@ class Department {
   // name: string;
   private employees: string [] = [];
 
-  constructor(public name: string){}
+  constructor(private readonly id: string,public name: string){}
   describe(){
     console.log('Departamento: '+ this.name)
   }
@@ -15,7 +15,7 @@ class Department {
   }
 }
 
-const contaduria = new Department("Contaduria");
+const contaduria = new Department("C1","Contaduria");
 
 contaduria.addEmployee("Luis");
 contaduria.addEmployee("Miguel");
