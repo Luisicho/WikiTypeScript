@@ -14,7 +14,7 @@ abstract class Department {
     return { name: name };
   }
 
-  constructor(private readonly id: string, public name: string) {}
+    constructor(private readonly id: string, public name: string) {}
   abstract describe(this: Department): void; 
 
   addEmployee(employe: string) {
@@ -27,16 +27,24 @@ abstract class Department {
 }
 
 class ITDepartment extends Department {
-  constructor(id: string, private admins: string[]) {
+  private static instance: ITDepartment;
+  private constructor(id: string, private admins: string[]) {
     super(id, "IT"); //Constructor de Padre
     console.log(this.employees);
+  }
+  static getInstance(){
+    if(ITDepartment.instance){
+      return this.instance;
+    }
+    this.instance = new ITDepartment("C1",[]);
+    return this.instance;
   }
   describe(this: Department){
     console.log("It Departamento");
   }; 
 }
 
-const contaduria = new ITDepartment("C1",[]);
+const contaduria = ITDepartment.getInstance();
 
 const empleado = Department.createEmployee("luis");
 
