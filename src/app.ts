@@ -1,4 +1,4 @@
-class Department {
+abstract class Department {
   // name: string;
   protected employees: string[] = [];
 
@@ -15,9 +15,8 @@ class Department {
   }
 
   constructor(private readonly id: string, public name: string) {}
-  describe() {
-    console.log("Departamento: " + this.name);
-  }
+  abstract describe(this: Department): void; 
+
   addEmployee(employe: string) {
     this.employees.push(employe);
   }
@@ -32,9 +31,12 @@ class ITDepartment extends Department {
     super(id, "IT"); //Constructor de Padre
     console.log(this.employees);
   }
+  describe(this: Department){
+    console.log("It Departamento");
+  }; 
 }
 
-const contaduria = new Department("C1", "Contaduria");
+const contaduria = new ITDepartment("C1",[]);
 
 const empleado = Department.createEmployee("luis");
 
