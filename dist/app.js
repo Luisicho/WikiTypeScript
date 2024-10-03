@@ -1,8 +1,24 @@
 "use strict";
-function add(n1, n2) {
-    return n1 + n2;
+class Department {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+        // name: string;
+        this.employees = [];
+    }
+    describe() {
+        console.log('Departamento: ' + this.name);
+    }
+    addEmployee(employe) {
+        this.employees.push(employe);
+    }
+    printEmployeeInformation() {
+        console.log(this.employees.length);
+        console.log(this.employees);
+    }
 }
-const num1 = 5;
-const num2 = 1.2;
-const result = add(num1, num2);
-console.log(result);
+const contaduria = new Department("C1", "Contaduria");
+contaduria.addEmployee("Luis");
+contaduria.addEmployee("Miguel");
+contaduria.describe();
+contaduria.printEmployeeInformation();
