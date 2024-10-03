@@ -1,14 +1,14 @@
 interface Saludo {
-  name: string;
+  name?: string;
   agree(frase: string): void;
 }
 
 let user1: Saludo;
 
 class Persona implements Saludo {
-  name: string;
+  name?: string;
   age = 30;
-  constructor(n: string) {
+  constructor(n?: string) {
     this.name = n;
   }
   agree(frase: string): void {
