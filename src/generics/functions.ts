@@ -18,3 +18,9 @@ function contAndDescribe<T extends Lengthy>(element:T): [T , string]{
 }
 
 console.log(contAndDescribe("Hola Amiga"));
+
+function extractAndConvert<T extends object, U extends keyof T> (obj: T, key: U){
+    return "Valor: " + obj[key];
+}
+
+extractAndConvert({name: "hola"}, "name");
